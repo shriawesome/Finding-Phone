@@ -107,7 +107,7 @@ def train_model(x, y, save_plot=True):
     lr_decay_callback = tf.keras.callbacks.LearningRateScheduler(scheduler)
     
     # Training the model
-    n_epochs = 2
+    n_epochs = 70
     hist = model.fit(x_train, y_train,
                     epochs=n_epochs,
                     batch_size=8,
