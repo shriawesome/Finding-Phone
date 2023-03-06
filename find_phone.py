@@ -69,13 +69,19 @@ def get_path(folder):
     files = os.listdir(folder)
     file_names = []
     minval = float('INF')
+    print(files)
     for file in files:
-        val = float(file.split("-")[1].split('.h5')[0])
+        try:
+            val = float(file.split("-")[1].split('.h5')[0])
+        except:
+            continue
         if val < minval:
             path = file
             minval = val
             
     path = folder + os.sep + path
+    print("Best Model Path: ",path)
+    
         
     return path
 
