@@ -93,10 +93,10 @@ def train_model(x, y, save_plot=True):
     print(f'x_train : {x_train.shape}, y_train: {y_train.shape}, x_test: {x_test.shape}, y_test: {y_test.shape}')
     
     # Saving the best model
-    if not os.path.isdir("model"):
-        os.mkdir("model/")
+    if not os.path.isdir("models"):
+        os.mkdir("models/")
         
-    save_path = "model/{epoch:02d}-{val_mse:.2f}.h5"
+    save_path = "models/{epoch:02d}-{val_mse:.2f}.h5"
     cp_callback = tf.keras.callbacks.ModelCheckpoint(filepath = save_path,
                                                  save_weights_only=True,
                                                  monitor='val_mse',
